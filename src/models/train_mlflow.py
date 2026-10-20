@@ -1,5 +1,4 @@
 """Train Logistic Regression and Random Forest with MLflow experiment tracking."""
-from pathlib import Path
 import json
 import logging
 import subprocess
