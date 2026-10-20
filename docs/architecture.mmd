@@ -1,0 +1,21 @@
+flowchart LR
+  DEV(["Developer push"]) --> F
+  subgraph DATA["Data and training"]
+    A["UCI Heart Disease<br/>via ucimlrepo"] --> B["clean_data.py<br/>EDA figures"]
+    B --> C["train_mlflow.py<br/>Logistic Regression + Random Forest<br/>5-fold CV tuning"]
+    C --> D[("MLflow tracking<br/>params, metrics, plots")]
+    C --> E["models/model.joblib"]
+  end
+  subgraph CICD["GitHub Actions"]
+    F["ruff lint"] --> G["clean data"] --> H["train + track"] --> I["pytest"] --> J["upload artifacts"]
+  end
+  subgraph SERVE["Serving"]
+    K["FastAPI app<br/>/predict /health /metrics"] --> L["Docker image<br/>heart-disease-api"]
+    L --> M["Kubernetes<br/>2 replicas + LoadBalancer"]
+  end
+  subgraph MON["Monitoring (Docker Compose)"]
+    N["Prometheus"] --> O["Grafana dashboard"]
+  end
+  E --> K
+  L -- "/metrics scrape" --> N
+  CLIENT(["Client"]) --> M
