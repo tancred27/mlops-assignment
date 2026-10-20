@@ -1,5 +1,6 @@
 {
   "logistic_regression": {
+    "run_id": "0b281a0747074561af29d8a8a4852002",
     "best_params": {
       "clf__C": 1
     },
@@ -29,6 +30,7 @@
     }
   },
   "random_forest": {
+    "run_id": "c2eeba58835645688940a4c6876acec5",
     "best_params": {
       "clf__max_depth": null,
       "clf__min_samples_split": 5,
