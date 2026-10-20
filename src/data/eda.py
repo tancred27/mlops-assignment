@@ -15,6 +15,7 @@ sns.set_theme(style="whitegrid", palette="Set2")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
+logging.getLogger("matplotlib.category").setLevel(logging.WARNING)
 
 
 def save(fig: plt.Figure, name: str) -> None:
