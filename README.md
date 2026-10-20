@@ -19,7 +19,7 @@ The selection is by cross-validated ROC-AUC. The two models are statistically cl
 
 ```powershell
 git clone https://github.com/tancred27/mlops-assignment.git
-cd heart-disease-mlops
+cd mlops-assignment
 py -3.11 -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt -r requirements-dev.txt
