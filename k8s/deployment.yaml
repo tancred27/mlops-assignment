@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: heart-api
-          image: heart-disease-api:1.0
+          image: heart-disease-api:1.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
@@ -43,4 +43,4 @@ spec:
               memory: 256Mi
             limits:
               cpu: 500m
-              memory: 512Mis
+              memory: 512Mi
